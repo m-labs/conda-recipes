@@ -1,0 +1,50 @@
+language: c
+branches:
+  only:
+    - master
+sudo: false
+addons:
+  apt:
+    packages:
+      - 'libc6:i386'
+env:
+  global:
+    - ANACONDA_LOGIN=m-labs
+    - secure: "EyiShoEa9Qrfr/forlwp74Lzcp/vD+0fJK/Hhmoe2RGrvN1IifgkL3N+0mhAd58xDdruvLHoALP33Uu5Xty0IlMu/xGltEPq+I23EEtfkSyHsmjYOHDjSu37sanpHCMr/sMOI5+kvfEdjW3f324VED24TD9ZuNZ5KHo2Wnq2WLVxTOFBjLrGAxYMGnnGIyHuKGJjeB6lLsnBhYQAf428Mw+aSY/aYcd6sxAHW9mOwfGLLs+ZKusFMnRfP8yzPngXMLdv80aICwLnvXDR3qnOU1vJP4WW13d5a44/cuufD4oQnE+RXdNyb6TBwxTuJIKWqj8/z2b8vxLC+a7S9Q5uiAy0ASsCqLADmma4H5XcnXaeWIFBYt7psx+CtnrZCffpHK1KJtpb8NgdZK8WbNwMwWZXqfs/KwJ+CGpdr9h5fiBmyMIQe29QLCSL5no6ZgT6LKuDdP6eIZ23ehOcZkw5s9bI6tA19U0MRgDlYVttC6aVqmPmDGTjiz3/327iySPeu1nLEhGlNX7nBEIeF4ewuaJvBXnaqFnh8hRWVswXBUkoMEWOVqfP3Ag3VeRtzzmpe+CmLjA340/Lj6hXfvgMdcTL1QzVGM+P88RT2UmzAZB1aUCCXMpAH3iUQamKxnkDIyPtZ98KtQCJT9VthkAhFIz0tZmZh+whD2vcx3qDyQc="
+  matrix:
+    - PYTHON="3.5" TARGET=linux-32
+    - PYTHON="3.5" TARGET=linux-64
+install:
+  - |
+    export PATH=~/miniconda/bin:$PATH
+    if [ "$TARGET" = "linux-64" ]; then
+      wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+      bash miniconda.sh -b -p ~/miniconda
+    elif [ "$TARGET" = "linux-32" ]; then
+      wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86.sh -O miniconda.sh
+      echo yes | bash miniconda.sh -b -p ~/miniconda
+    fi
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda install conda-build jinja2 anaconda-client
+  - conda config --add channels https://conda.anaconda.org/m-labs/channel/main
+  - conda config --set anaconda_upload yes
+  - conda info -a
+  - anaconda -q login --hostname $(hostname) --username $ANACONDA_LOGIN --password $ANACONDA_PASSWORD
+script: |
+  PACKAGES=$(git diff --name-only $TRAVIS_COMMIT_RANGE \
+            | awk 'BEGIN { FS="/" } /conda/ { print $2 }' \
+            | uniq)
+  echo "Packages to be built: ${PACKAGES}"
+  for pkg in $PACKAGES; do
+    for python in $PYTHON; do
+      conda build conda/$pkg --python $python
+    done
+  done
+notifications:
+  irc:
+    channels:
+      - chat.freenode.net#m-labs
+    template:
+      - "%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
+      - "Build details : %{build_url}"
