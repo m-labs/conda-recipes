@@ -41,8 +41,8 @@ install:
   - conda info -a
   - echo y | anaconda -q login --hostname travis-$TRAVIS_JOB_ID --username $ANACONDA_LOGIN --password $ANACONDA_PASSWORD
 script: |
-  PACKAGES=$(git diff --name-only $TAG...HEAD \
-            | awk 'BEGIN { FS="/" } /conda/ { print $1"/"$2 }' \
+  PACKAGES=$(git diff --raw $TAG...HEAD \
+            | awk 'match($0, /[MA]\t(conda\/.+?)\//, r) { print r[1] }' \
             | uniq)
   echo "Packages to build: $PACKAGES"
   if [ "$PACKAGES" != "" ]; then
