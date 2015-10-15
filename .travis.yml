@@ -12,8 +12,8 @@ addons:
       - 'libc6-dev:i386'
       - 'gcc-multilib'
       - 'g++-multilib'
-      - 'gcc-4.7-multilib'
-      - 'g++-4.7-multilib'
+      - 'gcc-4.8-multilib'
+      - 'g++-4.8-multilib'
 env:
   global:
     - ANACONDA_LOGIN=m-labs
