@@ -1,5 +1,5 @@
 package:
-  name: llvmdev-or1k
+  name: llvm-or1k
   version: "3.5.0"
 
 source:
@@ -7,7 +7,7 @@ source:
   git_tag: master
 
 build:
-  number: 5
+  number: 0
 
 requirements:
   build:

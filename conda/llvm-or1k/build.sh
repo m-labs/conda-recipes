@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd tools
-git clone https://github.com/openrisc/clang-or1k clang
+git clone https://github.com/openrisc/clang-or1k clang --depth 1
 cd ..
 mkdir build
 cd build
