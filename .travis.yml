@@ -31,7 +31,7 @@ install:
   - conda config --add channels https://conda.anaconda.org/m-labs/channel/main
   - conda config --set anaconda_upload yes
   - conda info -a
-  - echo y | anaconda -q login --hostname travis-$TRAVIS_BUILD_ID --username $ANACONDA_LOGIN --password $ANACONDA_PASSWORD
+  - echo y | anaconda -q login --hostname travis-$TRAVIS_JOB_ID --username $ANACONDA_LOGIN --password $ANACONDA_PASSWORD
 script: |
   PACKAGES=$(git diff --name-only $TRAVIS_COMMIT_RANGE \
             | awk 'BEGIN { FS="/" } /conda/ { print $2 }' \
