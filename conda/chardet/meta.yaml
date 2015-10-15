@@ -10,7 +10,7 @@ source:
 build:
   entry_points:
     - chardetect = chardet.chardetect:main
-  number: 0
+  number: 1
 
 requirements:
   build:
