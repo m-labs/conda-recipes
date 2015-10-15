@@ -2,6 +2,9 @@ package:
     name: llvmlite-artiq
     version: "0.5.1"
 
+build:
+    number: 6
+
 source:
     git_url: https://github.com/m-labs/llvmlite
     git_tag: artiq
@@ -13,9 +16,6 @@ requirements:
         - setuptools
     run:
         - python
-
-build:
-    number: 5
 
 test:
     imports:
