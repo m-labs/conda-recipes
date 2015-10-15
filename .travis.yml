@@ -10,11 +10,10 @@ addons:
     packages:
       - 'libc6:i386'
       - 'libc6-dev:i386'
-      - 'libstdc++6:i386'
       - 'gcc-multilib'
+      - 'g++-multilib'
       - 'gcc-4.7-multilib'
-      - 'g++-4.7'
-      - 'libstdc++6-4.7-dev:i386'
+      - 'g++-4.7-multilib'
 env:
   global:
     - ANACONDA_LOGIN=m-labs
