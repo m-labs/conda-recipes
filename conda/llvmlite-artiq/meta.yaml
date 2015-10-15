@@ -12,7 +12,7 @@ source:
 requirements:
     build:
         - python
-        - llvmdev-or1k
+        - llvm-or1k
         - setuptools
     run:
         - python
