@@ -13,8 +13,6 @@ requirements:
   build:
     - system [linux]
     - cmake [linux]
-    - libxml2 [linux]
-    - zlib [linux]
   run:
     - system [linux]
 
