@@ -7,6 +7,9 @@ source:
   url: https://pypi.python.org/packages/source/P/PrettyTable/prettytable-0.7.2.tar.bz2
   md5: 760dc900590ac3c46736167e09fa463a
 
+build:
+  number: 1
+
 requirements:
   build:
     - python
