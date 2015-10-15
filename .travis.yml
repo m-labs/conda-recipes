@@ -14,8 +14,8 @@ env:
     - secure: "EyiShoEa9Qrfr/forlwp74Lzcp/vD+0fJK/Hhmoe2RGrvN1IifgkL3N+0mhAd58xDdruvLHoALP33Uu5Xty0IlMu/xGltEPq+I23EEtfkSyHsmjYOHDjSu37sanpHCMr/sMOI5+kvfEdjW3f324VED24TD9ZuNZ5KHo2Wnq2WLVxTOFBjLrGAxYMGnnGIyHuKGJjeB6lLsnBhYQAf428Mw+aSY/aYcd6sxAHW9mOwfGLLs+ZKusFMnRfP8yzPngXMLdv80aICwLnvXDR3qnOU1vJP4WW13d5a44/cuufD4oQnE+RXdNyb6TBwxTuJIKWqj8/z2b8vxLC+a7S9Q5uiAy0ASsCqLADmma4H5XcnXaeWIFBYt7psx+CtnrZCffpHK1KJtpb8NgdZK8WbNwMwWZXqfs/KwJ+CGpdr9h5fiBmyMIQe29QLCSL5no6ZgT6LKuDdP6eIZ23ehOcZkw5s9bI6tA19U0MRgDlYVttC6aVqmPmDGTjiz3/327iySPeu1nLEhGlNX7nBEIeF4ewuaJvBXnaqFnh8hRWVswXBUkoMEWOVqfP3Ag3VeRtzzmpe+CmLjA340/Lj6hXfvgMdcTL1QzVGM+P88RT2UmzAZB1aUCCXMpAH3iUQamKxnkDIyPtZ98KtQCJT9VthkAhFIz0tZmZh+whD2vcx3qDyQc="
     - secure: "WQMym4WCaRXOiebMwmh//v4JlD19DnHaJO5XlXN2ZLqksaGHyHgntfEB+Yj0fvK2eGa6gBQrx3eAgVANqH3/BWb7ObaBxHNRcUnchE9S/rYwlLgMdI8u7p0/nBqVx2CuUXMlN5XzyUU8T2oUtqQozs5u+fe0bMWrWYocnlgh22co0Hcv8/EgFINEfqqJJywoIYsV/Y+/jqZRetPKBmR52EP2iqlr3zz80SeACSTXgvaed9L4ysG6ONKfQIrXdJqeSrB4fhNj11VDNCMermVnx6LqnrdaPVGhZP6rJcEV5VqLJspKcSS8W6wKJNTyb1/J3O9M7XvFUlCPdpjBH6hhznf2vvpjwoW7WdPLegKsyv6CM4J2vkXGkqNgGYpmeifTNvijc4k7p34Km3saQD19Q+jam5l9Y0y68wiq3D9jj/tvKgVjzw1u87L+Eoyx+LrjpT/DPlBHAzoX1PONZ7G4fRSCH3lckb+qpd7ElLIplnlSWGNOz/3fJr6jbRcQwzXN/XZq9h131ZSiLXMU6qIroUkka/7m3/HZVGponk2Hx98Ido2Z+56omwzZJ3KYvgJe0S5bE7cF+OgNHM4WfeRCBp2PUmxlRqAucVXat/Al12JTnuNdBOpvRkO8o9w+wchJ0ijjv9B/qzZu9pmQVFEusZugb85ZIGkmjZ7/AjOL/nE="
   matrix:
-    - PYTHON_VERSIONS="3.5" TARGET=linux-32 TAG=travis-32
-    - PYTHON_VERSIONS="3.5" TARGET=linux-64 TAG=travis-64
+    - PYTHON_VERSION="3.5" TARGET=linux-32 TAG=travis-32
+    - PYTHON_VERSION="3.5" TARGET=linux-64 TAG=travis-64
 install:
   - |
     export PATH=~/miniconda/bin:$PATH
@@ -35,14 +35,10 @@ install:
   - echo y | anaconda -q login --hostname travis-$TRAVIS_JOB_ID --username $ANACONDA_LOGIN --password $ANACONDA_PASSWORD
 script: |
   PACKAGES=$(git diff --name-only $TAG...HEAD \
-            | awk 'BEGIN { FS="/" } /conda/ { print $2 }' \
+            | awk 'BEGIN { FS="/" } /conda/ { print $1"/"$2 }' \
             | uniq)
-  echo "Packages to be built: ${PACKAGES}"
-  for pkg in $PACKAGES; do
-    for pyver in $PYTHON_VERSIONS; do
-      conda build conda/$pkg --python $pyver
-    done
-  done
+  echo "Packages to build: $PACKAGES"
+  conda build $PACKAGES --python $PYTHON_VERSION
 after_script:
   - anaconda -q logout
 after_success:
