@@ -38,7 +38,11 @@ script: |
             | awk 'BEGIN { FS="/" } /conda/ { print $1"/"$2 }' \
             | uniq)
   echo "Packages to build: $PACKAGES"
-  conda build $PACKAGES --python $PYTHON_VERSION
+  if [ "$TARGET" = "linux-64" ]; then
+    conda build $PACKAGES --python $PYTHON_VERSION
+  elif [ "$TARGET" = "linux-32" ]; then
+    i386 conda build $PACKAGES --python $PYTHON_VERSION
+  fi
 after_script:
   - anaconda -q logout
 after_success:
