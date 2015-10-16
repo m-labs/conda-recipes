@@ -15,6 +15,7 @@ addons:
       - 'gcc-4.8-multilib'
       - 'g++-4.8-multilib'
       - 'libglib2.0-0:i386' # for pyqt
+      - 'libxext6:i386' # for pyqt
 env:
   global:
     - ANACONDA_LOGIN=m-labs
