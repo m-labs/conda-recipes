@@ -1,3 +1,3 @@
 #!/bin/bash
 
-$PYTHON setup.py install
+CXX=g++-4.8 $PYTHON setup.py install
