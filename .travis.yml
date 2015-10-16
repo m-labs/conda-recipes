@@ -17,6 +17,7 @@ addons:
       - 'libglib2.0-0:i386' # for pyqt
       - 'libxext6:i386' # for pyqt
       - 'libsm6:i386' # for pyqt
+      - 'libxrender1:i386' # for pyqt
 env:
   global:
     - ANACONDA_LOGIN=m-labs
