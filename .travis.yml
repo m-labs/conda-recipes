@@ -50,9 +50,9 @@ script: |
   echo "Packages to build: $PACKAGES"
   if [ "$PACKAGES" != "" ]; then
     if [ "$TARGET" = "linux-64" ]; then
-      conda build $PACKAGES --python $PYTHON_VERSION
+      conda build --skip-existing --python $PYTHON_VERSION $PACKAGES
     elif [ "$TARGET" = "linux-32" ]; then
-      i386 conda build $PACKAGES --python $PYTHON_VERSION
+      i386 conda build --skip-existing --python $PYTHON_VERSION $PACKAGES
     fi
   fi
 after_script:
