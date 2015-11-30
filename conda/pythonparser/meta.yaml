@@ -13,6 +13,9 @@ requirements:
   build:
     - python
     - setuptools
+    - regex
+  run:
+    - regex
 
 test:
   imports:
