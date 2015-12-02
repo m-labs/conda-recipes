@@ -1,0 +1,22 @@
+package:
+    name: OutputCheck
+    version: 0.4.2
+
+source:
+  git_url: https://github.com/stp/OutputCheck
+  git_tag: 0.4.2
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - python
+    - setuptools
+  run:
+    - python
+
+about:
+    home: https://github.com/stp/OutputCheck
+    license: BSD-3-clause
+    summary: "A tool for checking the output of console programs inspired by LLVM's FileCheck"
