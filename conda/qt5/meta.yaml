@@ -1,0 +1,44 @@
+package:
+  name: qt5
+  version: 5.5.1
+
+source:
+  fn:   qt-everywhere-opensource-src-5.5.1.tar.xz                                                               [unix]
+  url:  http://download.qt.io/official_releases/qt/5.5/5.5.1/single/qt-everywhere-opensource-src-5.5.1.tar.xz   [unix]
+  md5:  c2a249e8795d45200d997d96860d0353                                                                        [unix]
+  fn:   qt-everywhere-opensource-src-5.5.1.zip                                                                  [win]
+  url:  http://download.qt.io/official_releases/qt/5.5/5.5.1/single/qt-everywhere-opensource-src-5.5.1.zip      [win]
+  md5:  d071cdaa1b8f34fb49f6deac94039c2c                                                                        [win]
+
+build:
+  detect_binary_files_with_prefix: true
+
+requirements:
+  build:
+    - icu
+    - python
+    - jom                    [win]
+    - freetype               [unix]
+    - openssl                [unix]
+    - libpng        1.6*     [unix]
+    - jpeg                   [unix]
+    - zlib                   [unix]
+    - fontconfig             [linux]
+    - gst-plugins-base       [linux]
+    - libxcb                 [linux]
+
+  run:
+    - icu
+    - freetype               [unix]
+    - zlib                   [unix]
+    - openssl                [unix]
+    - libpng        1.6*     [unix]
+    - jpeg                   [unix]
+    - fontconfig             [linux]
+    - gst-plugins-base       [linux]
+    - libxcb                 [linux]
+
+about:
+    home: http://www.qt.io
+    license: LGPL
+
