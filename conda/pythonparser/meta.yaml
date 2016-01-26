@@ -8,6 +8,7 @@ source:
 
 build:
   number: 5
+  string: py_5
   noarch_python: true
   script: $PYTHON setup.py install
 
