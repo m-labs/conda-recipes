@@ -18,8 +18,8 @@ requirements:
     - python
 
 test:
-    imports:
-        - regex
+  imports:
+    - regex
 
 about:
   home: https://bitbucket.org/mrabarnett/mrab-regex

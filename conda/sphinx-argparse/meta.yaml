@@ -8,7 +8,9 @@ source:
   md5: 5ec84e75e1c4b2ae7ca5fb92a6abd738
 
 build:
-  number: 3
+  number: 4
+  noarch_python: true
+  script: $PYTHON setup.py install
 
 requirements:
   build:

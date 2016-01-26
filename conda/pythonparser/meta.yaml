@@ -8,6 +8,8 @@ source:
 
 build:
   number: 5
+  noarch_python: true
+  script: $PYTHON setup.py install
 
 requirements:
   build:
