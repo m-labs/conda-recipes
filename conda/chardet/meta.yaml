@@ -8,9 +8,11 @@ source:
   md5: 4a758402eaefd0331bdedc7ecb6f452c
 
 build:
+  number: 3
+  noarch_python: true
+  script: $PYTHON setup.py install
   entry_points:
     - chardetect = chardet.chardetect:main
-  number: 2
 
 requirements:
   build:

@@ -1,13 +1,15 @@
 package:
-    name: outputcheck
-    version: 0.4.2
+  name: outputcheck
+  version: 0.4.2
 
 source:
   git_url: https://github.com/stp/OutputCheck
   git_tag: 0.4.2
 
 build:
-  number: 0
+  number: 1
+  noarch_python: true
+  script: $PYTHON setup.py install
 
 requirements:
   build:
