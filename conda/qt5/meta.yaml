@@ -24,7 +24,6 @@ requirements:
     - jpeg                   [unix]
     - zlib                   [unix]
     - fontconfig             [linux]
-    - gst-plugins-base       [linux]
     - libxcb                 [linux]
 
   run:
@@ -35,7 +34,6 @@ requirements:
     - libpng        1.6*     [unix]
     - jpeg                   [unix]
     - fontconfig             [linux]
-    - gst-plugins-base       [linux]
     - libxcb                 [linux]
 
 about:

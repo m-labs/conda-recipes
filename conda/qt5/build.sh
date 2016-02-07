@@ -24,10 +24,11 @@ if [ `uname` == Linux ]; then
                 -nomake tests \
                 -verbose \
                 -no-libudev \
-                -gtkstyle \
+                -no-gtkstyle \
                 -qt-xcb \
                 -qt-pcre \
                 -qt-xkbcommon \
+                -skip qtmultimedia \
                 -xkb-config-root $PREFIX/lib \
                 -dbus
 fi
