@@ -13,10 +13,8 @@ about:
 
 requirements:
   build:
-    - bison
-    - flex
     - glib
-  
+
   run:
     - glib
 
