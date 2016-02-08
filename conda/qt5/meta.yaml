@@ -24,7 +24,6 @@ requirements:
     - jpeg                   [unix]
     - zlib                   [unix]
     - fontconfig             [linux]
-    - libxcb                 [linux]
 
   run:
     - icu
@@ -34,7 +33,6 @@ requirements:
     - libpng        1.6*     [unix]
     - jpeg                   [unix]
     - fontconfig             [linux]
-    - libxcb                 [linux]
 
 about:
     home: http://www.qt.io
