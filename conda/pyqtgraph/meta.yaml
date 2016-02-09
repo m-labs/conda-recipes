@@ -1,6 +1,6 @@
 package:
   name: pyqtgraph
-  version: {{ environ.get("GIT_DESCRIBE_TAG", "") }}
+  version: {{ environ.get("GIT_DESCRIBE_TAG", "")[10:] }}
 
 source:
   git_url: https://github.com/m-labs/pyqtgraph.git
