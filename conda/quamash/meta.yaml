@@ -16,10 +16,10 @@ requirements:
   build:
     - python
     - setuptools
-    - pyqt5
+    - pyqt 5.*
   run:
     - python
-    - pyqt5
+    - pyqt 5.*
 
 test:
   imports:
