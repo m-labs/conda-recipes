@@ -1,3 +1,7 @@
+# /!\ ACHTUNG /!\
+# The build number 1 on anaconda.org is a manually hacked up version
+# that I did to save time. It was not freshly built from this recipe.
+
 package:
   name: binutils-or1k-linux
   version: 2.25.1
@@ -8,7 +12,7 @@ source:
   sha256: b5b14added7d78a8d1ca70b5cb75fef57ce2197264f4f5835326b0df22ac9f22
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
