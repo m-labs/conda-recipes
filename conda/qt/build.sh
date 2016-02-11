@@ -1,8 +1,5 @@
 #!/bin/bash
 
-BIN=$PREFIX/lib/qt5/bin
-QTCONF=$BIN/qt.conf
-
 chmod +x configure
 
 if [ `uname` == Linux ]; then
@@ -72,9 +69,8 @@ rm -rf $PREFIX/share/qt5
 rm -rf $PREFIX/lib/*.a
 
 # Add qt.conf file to the package to make it fully relocatable
-cat <<EOF >$QTCONF
+cat <<EOF >$PREFIX/qt.conf
 [Paths]
 Prefix = $PREFIX
-
 EOF
 
