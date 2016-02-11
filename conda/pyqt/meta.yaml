@@ -1,5 +1,5 @@
 package:
-  name: pyqt5
+  name: pyqt
   version: 5.5.1
 
 source:

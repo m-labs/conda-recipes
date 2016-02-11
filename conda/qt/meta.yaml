@@ -1,5 +1,5 @@
 package:
-  name: qt5
+  name: qt
   version: 5.5.1
 
 source:
