@@ -16,13 +16,13 @@ source:
 requirements:
   build:
     - python
-    - qt5     >=5.5.1
+    - qt      >=5.5.1
     - sip     >=4.16.7
     - jom     [win]
 
   run:
     - python
-    - qt5     >=5.5.1
+    - qt      >=5.5.1
     - sip     >=4.16.7
 
 test:
