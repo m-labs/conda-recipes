@@ -42,4 +42,4 @@ rmdir %PREFIX%\Library\share\qt5 /s /q
 %PYTHON% %RECIPE_DIR%\patch_prefix_files.py
 
 @echo [Paths] >%PREFIX%\qt.conf
-@echo Prefix = %PREFIx%\Library >%PREFIX%\qt.conf
+@echo Prefix = ./Library >>%PREFIX%\qt.conf
