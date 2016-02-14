@@ -69,8 +69,8 @@ rm -rf $PREFIX/share/qt5
 rm -rf $PREFIX/lib/*.a
 
 # Add qt.conf file to the package to make it fully relocatable
-cat <<EOF >$PREFIX/qt.conf
+cat <<EOF >$PREFIX/bin/qt.conf
 [Paths]
-Prefix = $PREFIX
+Prefix = ..
 EOF
 
