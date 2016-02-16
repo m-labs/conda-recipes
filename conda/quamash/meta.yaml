@@ -1,14 +1,14 @@
 package:
   name: quamash
-  version: 0.5.1
+  version: 0.5.4
 
 source:
-  fn: Quamash-0.5.1.tar.gz
-  url: https://pypi.python.org/packages/source/Q/Quamash/Quamash-0.5.1.tar.gz#md5=c5fa317f615eafd492560771bc2caeca
-  md5: c5fa317f615eafd492560771bc2caeca
+  fn: version-0.5.4.tar.gz
+  url: https://github.com/harvimt/quamash/archive/version-0.5.4.tar.gz#md5=79a2cebf9c53a6fdd0e43f01f80e0451
+  md5: 79a2cebf9c53a6fdd0e43f01f80e0451
 
 build:
-  number: 7
+  number: 0
   noarch_python: true
   script: $PYTHON setup.py install
 
