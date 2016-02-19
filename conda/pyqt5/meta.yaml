@@ -1,5 +1,5 @@
 package:
-  name: pyqt
+  name: pyqt5
   version: 5.5.1
 
 source:
@@ -16,13 +16,13 @@ source:
 requirements:
   build:
     - python
-    - qt      >=5.5.1
+    - qt5     >=5.5.1
     - sip     >=4.16.7
     - jom     [win]
 
   run:
     - python
-    - qt      >=5.5.1
+    - qt5     >=5.5.1
     - sip     >=4.16.7
 
 test:
