@@ -11,7 +11,7 @@ source:
   sha1: d54cd7cf26b10f0b59fddce4a6a742f9697a94ff                                         [unix]
 
   patches:
-    - configure.patch       [osx]
+    - configure-qmake.patch       [win]
 
 requirements:
   build:
