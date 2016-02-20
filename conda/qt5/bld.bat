@@ -30,6 +30,7 @@ CALL configure ^
     -nomake examples ^
     -nomake tests ^
     -skip enginio ^
+    -skip qtimageformats ^
     -opengl dynamic ^
     -qt-pcre ^
     -icu
