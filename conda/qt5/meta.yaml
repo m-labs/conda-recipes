@@ -11,7 +11,7 @@ source:
   md5:  d071cdaa1b8f34fb49f6deac94039c2c                                                                        [win]
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
