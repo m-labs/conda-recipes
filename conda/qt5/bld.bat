@@ -14,7 +14,7 @@ set QMAKESPEC=win32-msvc2015
 :: this needs to be CALLed due to an exit statement at the end of configure:
 CALL configure ^
     -prefix %PREFIX%\Library ^
-    -bindir %PREFIX%\Library\bin ^
+    -bindir %PREFIX%\Library\bin\qt5 ^
     -headerdir %PREFIX%\Library\include\qt5 ^
     -libdir %PREFIX%\Library\lib\qt5 ^
     -archdatadir %PREFIX%\Library\lib\qt5 ^
@@ -43,7 +43,8 @@ jom install
 if errorlevel 1 exit 1
 
 :: add -qt5 suffix for qt4 coexistence
-for %%G in (%PREFIX%\Library\bin\*.exe) do rename %%~fG %%~nG-qt5%%~xG
+for %%G in (%PREFIX%\Library\bin\qt5\*.dll) do move %%G %PREFIX%\Library\bin\
+for %%G in (%PREFIX%\Library\bin\qt5\*.exe) do echo %%G %%* >%PREFIX%\Library\bin\%%~nG-qt5.bat
 if errorlevel 1 exit 1
 
 :: remove docs, phrasebooks, translations
