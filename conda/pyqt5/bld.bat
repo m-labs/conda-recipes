@@ -4,7 +4,7 @@
         --verbose ^
         --spec=win32-msvc2015 ^
         --confirm-license ^
-        --qmake=%PREFIX%\Library\bin\qmake-qt5 ^
+        --qmake=%PREFIX%\Library\bin\qmake-qt5.exe ^
         --assume-shared ^
         --bindir=%PREFIX%\Library\bin ^
         --disable QtNfc

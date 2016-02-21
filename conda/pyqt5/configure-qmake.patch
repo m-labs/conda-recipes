@@ -1,5 +1,5 @@
---- a/configure.py	2016-02-21 06:58:37.062442872 +0000
-+++ b/configure.py	2016-02-21 07:01:43.867428359 +0000
+--- configure.py~	2016-02-21 06:58:37.062442872 +0000
++++ configure.py	2016-02-21 07:01:43.867428359 +0000
 @@ -790,16 +790,10 @@
  
          # Check the Qt version number as soon as possible.
@@ -33,7 +33,8 @@
 -
 -        if qmake is not None:
 +        if opts.qmake is not None:
-             self.qmake = qmake
+-            self.qmake = qmake
++            self.qmake = opts.qmake
 -        elif self.qmake is None:
 -            # Under Windows qmake and the Qt DLLs must be on the system PATH
 -            # otherwise the dynamic linker won't be able to resolve the
