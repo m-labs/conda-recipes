@@ -86,8 +86,8 @@ rm -rfv $PREFIX/share/qt5
 rm -rfv $PREFIX/lib/*.a
 
 # Add qt.conf file to the package to make it fully relocatable
-cp $RECIPE_DIR/qt5_unix.conf $PREFIX/qt5.conf
-echo "Prefix = ." >>$PREFIX/qt5.conf
+cp $RECIPE_DIR/qt5_unix.conf $PREFIX/bin/qt5.conf
+echo "Prefix = .." >>$PREFIX/bin/qt5.conf
 
 cp $RECIPE_DIR/qt5_unix.conf $PREFIX/lib/qt5/bin/qt5.conf
 echo "Prefix = ../../.." >>$PREFIX/lib/qt5/bin/qt5.conf
