@@ -1,33 +1,32 @@
 package:
   name: pygit2
-  version: 0.22.1
+  version: 0.24.0
 
 source:
   git_url: https://github.com/libgit2/pygit2
-  git_tag: v0.22.1
+  git_tag: v0.24.0
 
 build:
-  number: 3
+  number: 1
 
 requirements:
   build:
     - system # [linux]
     - python
-    - libgit2
+    - libgit2 ==0.24.0
     - cffi >=0.8.1
     - pkgconfig # [linux]
+    - six
   run:
     - system # [linux]
     - python
-    - libgit2
+    - libgit2 ==0.24.0
     - cffi >=0.8.1
+    - six
 
 test:
   imports:
     - pygit2
-  requires:
-    - libgit2
-    - cffi >=0.8.1
 
 about:
   home: http://www.pygit2.org/
