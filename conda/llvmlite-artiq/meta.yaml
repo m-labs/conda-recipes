@@ -3,7 +3,7 @@ package:
     version: "0.5.1"
 
 build:
-    number: 16
+    number: 17
 
 source:
     git_url: https://github.com/m-labs/llvmlite
@@ -12,7 +12,7 @@ source:
 requirements:
     build:
         - python
-        - llvm-or1k
+        - llvm-or1k 3.5.*
         - setuptools
     run:
         - python
