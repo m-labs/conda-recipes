@@ -1,18 +1,18 @@
 package:
     name: llvmlite-artiq
-    version: "0.5.1"
+    version: 0.10.0.dev
 
 build:
-    number: 19
+    number: 20
 
 source:
     git_url: https://github.com/m-labs/llvmlite
-    git_tag: artiq
+    git_tag: artiq-3.7
 
 requirements:
     build:
         - python
-        - llvm-or1k 3.6.*
+        - llvm-or1k 3.7.*
         - setuptools
     run:
         - python
