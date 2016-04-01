@@ -1,13 +1,13 @@
 package:
   name: llvm-or1k
-  version: "3.7.1"
+  version: "3.8.1"
 
 source:
   git_url: https://github.com/openrisc/llvm-or1k
   git_tag: master
 
 build:
-  number: 8
+  number: 9
 
 requirements:
   build:
@@ -18,5 +18,5 @@ requirements:
 
 about:
   home: http://llvm.org/
-  license: Open Source (http://llvm.org/releases/3.7.1/LICENSE.TXT)
+  license: Open Source (http://llvm.org/releases/3.8.1/LICENSE.TXT)
   summary: Development headers and libraries for LLVM
