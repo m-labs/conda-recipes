@@ -1,13 +1,13 @@
 package:
   name: libgit2
-  version: 0.24.0
+  version: 0.24.1
 
 source:
   git_url: https://github.com/libgit2/libgit2
-  git_tag: v0.24.0
+  git_tag: v0.24.1
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
