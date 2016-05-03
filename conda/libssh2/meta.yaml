@@ -7,15 +7,12 @@ source:
   git_tag: 7934c9ce2a029c43e3642a492d3b9e494d1542be
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - system # [linux]
-    - cmake # [linux]
-    - openssl
-  run:
-    - openssl
+    - cmake
 
 about:
   home: http://www.libssh2.org/
