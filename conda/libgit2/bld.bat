@@ -2,12 +2,11 @@ mkdir build
 cd build
 REM Configure step
 if "%ARCH%"=="32" (
-set CMAKE_GENERATOR=Visual Studio 12 2013
+set CMAKE_GENERATOR=Visual Studio 14 2015
 ) else (
-set CMAKE_GENERATOR=Visual Studio 12 2013 Win64
+set CMAKE_GENERATOR=Visual Studio 14 2015 Win64
 )
-set CMAKE_GENERATOR_TOOLSET=v120_xp
-cmake -G "%CMAKE_GENERATOR%" -DCMAKE_INSTALL_PREFIX="%PREFIX%" -DSTDCALL=OFF -DSTATIC_CRT=OFF -DCMAKE_PREFIX_PATH="%PREFIX%" "%SRC_DIR%" -DCMAKE_BUILD_TYPE=Debug
+cmake -G "%CMAKE_GENERATOR%" -DCMAKE_INSTALL_PREFIX="%PREFIX%" -DSTDCALL=OFF -DSTATIC_CRT=OFF -DCMAKE_PREFIX_PATH="%PREFIX%" "%SRC_DIR%"
 if errorlevel 1 exit 1
 REM Build step
 cmake --build .
@@ -18,4 +17,3 @@ if errorlevel 1 exit 1
 REM Hack to help pygit2 to find libgit2
 mkdir "%PREFIX%\Scripts"
 copy "%PREFIX%\bin\git2.dll" "%PREFIX%\Scripts\"
-copy "Debug\*.pdb" "%PREFIX%\bin\"
