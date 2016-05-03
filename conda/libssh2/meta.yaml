@@ -1,13 +1,13 @@
 package:
   name: libssh2
-  version: 1.6.0
+  version: 1.7.0.git
 
 source:
   git_url: https://github.com/libssh2/libssh2
-  git_tag: libssh2-1.6.0
+  git_tag: 7934c9ce2a029c43e3642a492d3b9e494d1542be
 
 build:
-  number: 3
+  number: 0
 
 requirements:
   build:
