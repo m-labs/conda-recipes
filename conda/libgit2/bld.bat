@@ -18,3 +18,4 @@ if errorlevel 1 exit 1
 REM Hack to help pygit2 to find libgit2
 mkdir "%PREFIX%\Scripts"
 copy "%PREFIX%\bin\git2.dll" "%PREFIX%\Scripts\"
+copy "Debug\*.pdb" "%PREFIX%\bin\"
