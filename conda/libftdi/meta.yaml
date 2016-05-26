@@ -14,6 +14,9 @@ requirements:
   build:
     - system # [linux]
     - cmake # [linux]
+    - libusb
+  run:
+    - libusb
 
 about:
   home: https://www.intra2net.com/en/developer/libftdi/
