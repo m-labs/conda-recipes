@@ -1,6 +1,6 @@
 package:
   name: libusb
-  version: 1.3
+  version: 1.0.20
 
 source:
   fn:   libusb-1.0.20.tar.bz2
