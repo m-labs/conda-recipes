@@ -30,5 +30,5 @@ make install
 if errorlevel 1 exit 1
 
 rem conda has trouble with these
-del %PREFIX%/Library/share/openocd/scripts/target/?1879x?1?.cfg
-del %PREFIX%/Library/share/openocd/scripts/target/1986??1?.cfg
+del %PREFIX%\Library\share\openocd\scripts\target\?1879x?1?.cfg
+del %PREFIX%\Library\share\openocd\scripts\target\1986??1?.cfg
