@@ -4,7 +4,7 @@ package:
 
 source:
   git_tag: master
-  git_url: git://github.com/ntfreak/openocd
+  git_url: https://github.com/ntfreak/openocd
 
 build:
   number: 1
