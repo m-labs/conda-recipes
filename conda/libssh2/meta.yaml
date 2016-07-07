@@ -7,7 +7,7 @@ source:
   git_tag: 7934c9ce2a029c43e3642a492d3b9e494d1542be
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
