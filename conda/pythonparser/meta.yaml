@@ -7,8 +7,8 @@ source:
   git_tag: master
 
 build:
-  number: 5
-  string: py_5
+  number: 6
+  string: py_6
   noarch_python: true
   script: $PYTHON setup.py install
 
