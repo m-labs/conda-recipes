@@ -14,6 +14,7 @@ requirements:
     - system [linux]
     - cmake
     - llvm-or1k
+    - curl
   run:
     - system [linux]
     - llvm-or1k
