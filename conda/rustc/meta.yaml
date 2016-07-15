@@ -1,0 +1,24 @@
+package:
+  name: rustc
+  version: "1.10.0"
+
+source:
+  git_url: https://github.com/m-labs/rust
+  git_tag: artiq
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - system [linux]
+    - cmake
+    - llvm-or1k
+  run:
+    - system [linux]
+    - llvm-or1k
+
+about:
+  home: http://rust-lang.org/
+  license: MIT/Apache
+  summary: A safe, concurrent, practical language
