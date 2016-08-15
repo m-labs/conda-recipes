@@ -1,0 +1,19 @@
+package:
+  name: rust-core-or1k
+  version: "1.12.0"
+
+source:
+  git_url: https://github.com/m-labs/rust
+  git_rev: artiq
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - rustc 1.12.0
+
+about:
+  home: http://rust-lang.org/
+  license: MIT/Apache
+  summary: A safe, concurrent, practical language
