@@ -1,13 +1,13 @@
 package:
   name: llvm-or1k
-  version: "3.9.1"
+  version: "3.8.1"
 
 source:
   git_url: https://github.com/m-labs/llvm-or1k
-  git_tag: artiq-3.9
+  git_tag: artiq-3.8
 
 build:
-  number: 14
+  number: 15
 
 requirements:
   build:
