@@ -12,6 +12,7 @@ build:
 requirements:
   build:
     - rustc 1.12.0 2
+    - llvm-or1k 3.8.1 15 # >=15, but inexpressible in conda
   run:
     - rustc 1.12.0 2
 
