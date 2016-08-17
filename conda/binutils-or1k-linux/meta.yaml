@@ -14,7 +14,7 @@ source:
     - fix-_GLOBAL_OFFSET_TABLE_-placement.patch
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
