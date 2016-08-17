@@ -4,12 +4,12 @@
 
 package:
   name: binutils-or1k-linux
-  version: 2.25.1
+  version: 2.27
 
 source:
-  fn: binutils-2.25.1.tar.bz2
-  url: https://ftp.gnu.org/gnu/binutils/binutils-2.25.1.tar.bz2
-  sha256: b5b14added7d78a8d1ca70b5cb75fef57ce2197264f4f5835326b0df22ac9f22
+  fn: binutils-2.27.tar.bz2
+  url: https://ftp.gnu.org/gnu/binutils/binutils-2.27.tar.bz2
+  sha256: 369737ce51587f92466041a97ab7d2358c6d9e1b6490b3940eb09fb0a9a6ac88
   patches:
     - fix-_GLOBAL_OFFSET_TABLE_-placement.patch
 
