@@ -1,0 +1,29 @@
+From 72cfd140dd70c10d4be7a8225c86af35dcc623f4 Mon Sep 17 00:00:00 2001
+From: whitequark <whitequark@whitequark.org>
+Date: Wed, 17 Aug 2016 06:02:21 +0000
+Subject: [PATCH] Fix a bug where _GLOBAL_OFFSET_TABLE_ would not point at
+ .got.
+
+When `bed->want_got_plt` is true, the variable `s` was reused by
+code that created .got.plt, and the defined _GLOBAL_OFFSET_TABLE_
+symbol pointed at the start of .got.plt instead of .got as a result.
+---
+ bfd/elflink.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/bfd/elflink.c b/bfd/elflink.c
+index c2ad11b..75c94a8 100644
+--- a/bfd/elflink.c
++++ b/bfd/elflink.c
+@@ -186,7 +186,7 @@ _bfd_elf_create_got_section (bfd *abfd, struct bfd_link_info *info)
+ 	 (or .got.plt) section.  We don't do this in the linker script
+ 	 because we don't want to define the symbol if we are not creating
+ 	 a global offset table.  */
+-      h = _bfd_elf_define_linkage_sym (abfd, info, s,
++      h = _bfd_elf_define_linkage_sym (abfd, info, htab->sgot,
+ 				       "_GLOBAL_OFFSET_TABLE_");
+       elf_hash_table (info)->hgot = h;
+       if (h == NULL)
+-- 
+2.8.1
+
