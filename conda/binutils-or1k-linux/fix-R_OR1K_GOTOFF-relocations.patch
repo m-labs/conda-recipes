@@ -1,25 +1,10 @@
-From dfaa29de7fd7b0b1344cc25566436ab0e4d38f7f Mon Sep 17 00:00:00 2001
-From: whitequark <whitequark@whitequark.org>
-Date: Wed, 17 Aug 2016 11:00:50 +0000
-Subject: [PATCH] [OR1K] Follow placement of _GLOBAL_OFFSET_TABLE_ in
- R_OR1K_GOTOFF_*.
-
-_bfd_elf_create_got_section places the _GLOBAL_OFFSET_TABLE_ symbol
-either at the start of .got.plt (if one is placed) or .got (if not).
-However, R_OR1K_GOTOFF_* are always computed relative to .got, so
-if a PLT is generated, the offsets are incorrect.
-
-This commit alters the relocation logic so that it follows the logic
-in _bfd_elf_create_got_section.
----
- bfd/elf32-or1k.c | 15 +++++++++++----
- 1 file changed, 11 insertions(+), 4 deletions(-)
-
 diff --git a/bfd/elf32-or1k.c b/bfd/elf32-or1k.c
 index 1daa7b6..522f141 100644
 --- a/bfd/elf32-or1k.c
 +++ b/bfd/elf32-or1k.c
-@@ -809,7 +809,7 @@ or1k_elf_relocate_section (bfd *output_bfd,
+@@ -807,21 +807,22 @@ or1k_elf_relocate_section (bfd *output_bfd,
+   Elf_Internal_Rela *relend;
+   struct elf_or1k_link_hash_table *htab = or1k_elf_hash_table (info);
    bfd *dynobj;
    asection *sreloc;
    bfd_vma *local_got_offsets;
@@ -28,7 +13,10 @@ index 1daa7b6..522f141 100644
  
    if (htab == NULL)
      return FALSE;
-@@ -820,6 +820,7 @@ or1k_elf_relocate_section (bfd *output_bfd,
+ 
+   dynobj = htab->root.dynobj;
+   local_got_offsets = elf_local_got_offsets (input_bfd);
+ 
    sreloc = elf_section_data (input_section)->sreloc;
  
    sgot = htab->sgot;
@@ -36,7 +24,11 @@ index 1daa7b6..522f141 100644
  
    symtab_hdr = &elf_tdata (input_bfd)->symtab_hdr;
    sym_hashes = elf_sym_hashes (input_bfd);
-@@ -996,9 +997,15 @@ or1k_elf_relocate_section (bfd *output_bfd,
+   relend = relocs + input_section->reloc_count;
+ 
+@@ -994,13 +995,17 @@ or1k_elf_relocate_section (bfd *output_bfd,
+ 
+           break;
  
          case R_OR1K_GOTOFF_LO16:
          case R_OR1K_GOTOFF_HI16:
@@ -46,15 +38,13 @@ index 1daa7b6..522f141 100644
 +          /* Relocation is offset from the _GLOBAL_OFFSET_TABLE_ symbol, which is
 +             located at the start of PLT (if there's one) or GOT.
 +             See _bfd_elf_create_got_section.  */
-+          if(sgotplt != NULL) {
-+            relocation -= sgotplt->output_section->vma;
-+          } else {
-+            BFD_ASSERT (sgot != NULL);
-+            relocation -= sgot->output_section->vma;
-+          }
++          relocation
++            -= (htab->root.hgot->root.u.def.value
++                + htab->root.hgot->root.u.def.section->output_offset
++                + htab->root.hgot->root.u.def.section->output_section->vma);
            break;
  
          case R_OR1K_INSN_REL_26:
--- 
-2.8.1
+         case R_OR1K_HI_16_IN_INSN:
+         case R_OR1K_LO_16_IN_INSN:
 

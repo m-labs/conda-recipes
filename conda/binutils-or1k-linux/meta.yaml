@@ -14,7 +14,7 @@ source:
     - fix-R_OR1K_GOTOFF-relocations.patch
 
 build:
-  number: 4
+  number: 5
 
 requirements:
   build:
