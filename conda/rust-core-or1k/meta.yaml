@@ -7,7 +7,7 @@ source:
   git_rev: artiq
 
 build:
-  number: 6
+  number: 7
 
 requirements:
   build:
