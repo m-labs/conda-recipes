@@ -7,13 +7,13 @@ source:
   git_rev: artiq
 
 build:
-  number: 6
+  number: 7
 
 requirements:
   build:
     - system [linux]
     - cmake
-    - llvm-or1k 3.8.1 18
+    - llvm-or1k 3.9.1 19
     - curl
   run:
     - system [linux]
