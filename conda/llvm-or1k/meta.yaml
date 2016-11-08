@@ -1,13 +1,13 @@
 package:
   name: llvm-or1k
-  version: "3.8.1"
+  version: "3.9.1"
 
 source:
   git_url: https://github.com/m-labs/llvm-or1k
-  git_tag: artiq-3.8
+  git_tag: artiq-3.9
 
 build:
-  number: 18
+  number: 19
 
 requirements:
   build:
@@ -17,5 +17,5 @@ requirements:
 
 about:
   home: http://llvm.org/
-  license: Open Source (http://llvm.org/releases/3.8.1/LICENSE.TXT)
+  license: Open Source (http://llvm.org/releases/3.9.1/LICENSE.TXT)
   summary: Development headers and libraries for LLVM
