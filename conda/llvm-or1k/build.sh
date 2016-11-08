@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd tools
-git clone https://github.com/m-labs/clang-or1k clang --depth 1 --branch artiq-3.8
+git clone https://github.com/m-labs/clang-or1k clang --depth 1 --branch master
 cd ..
 mkdir build
 cd build
