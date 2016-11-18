@@ -1,6 +1,6 @@
 package:
   name: jesd204b
-  version: 0.1
+  version: 0.2
 
 source:
   git_url: https://github.com/m-labs/jesd204b
