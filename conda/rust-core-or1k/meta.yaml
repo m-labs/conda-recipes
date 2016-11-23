@@ -7,13 +7,13 @@ source:
   git_rev: artiq
 
 build:
-  number: 9
+  number: 10
 
 requirements:
   build:
-    - rustc 1.12.0 7
+    - rustc 1.12.0 8
   run:
-    - rustc 1.12.0 7
+    - rustc 1.12.0 8
 
 about:
   home: http://rust-lang.org/
