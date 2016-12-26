@@ -11,9 +11,9 @@ build:
 
 requirements:
   build:
-    - rustc 1.16.0 10
+    - rustc 1.16.0 11
   run:
-    - rustc 1.16.0 10
+    - rustc 1.16.0 11
 
 about:
   home: http://rust-lang.org/
