@@ -7,4 +7,4 @@ cd build
   --llvm-root=$(dirname $(dirname $(which llvm-config))) \
   --disable-manage-submodules \
   --enable-rustbuild
-make install
+make install VERBOSE=1
