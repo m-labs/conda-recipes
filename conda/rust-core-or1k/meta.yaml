@@ -1,19 +1,19 @@
 package:
   name: rust-core-or1k
-  version: "1.16.0"
+  version: "1.17.0"
 
 source:
   git_url: https://github.com/m-labs/rust
-  git_rev: artiq-1.16.0
+  git_rev: artiq-1.17.0
 
 build:
-  number: 11
+  number: 12
 
 requirements:
   build:
-    - rustc 1.16.0 11
+    - rustc 1.17.0 12
   run:
-    - rustc 1.16.0 11
+    - rustc 1.17.0 12
 
 about:
   home: http://rust-lang.org/
