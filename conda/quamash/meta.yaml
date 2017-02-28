@@ -19,7 +19,7 @@ requirements:
     - pyqt5
   run:
     - python
-    - pyqt5
+    - pyqt
 
 test:
   imports:
