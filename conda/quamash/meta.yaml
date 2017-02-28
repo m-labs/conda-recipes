@@ -17,6 +17,7 @@ requirements:
     - python
     - setuptools
     - pyqt >=5.5
+    - freeglut [linux]
   run:
     - python
     - pyqt >=5.5
