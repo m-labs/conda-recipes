@@ -8,7 +8,7 @@ source:
   md5: 4aeb8c04521f2eb8cd7a3e3edd309007
 
 build:
-  number: 3
+  number: 4
   noarch: python
   script: $PYTHON setup.py install
 
@@ -16,10 +16,10 @@ requirements:
   build:
     - python
     - setuptools
-    - pyqt5
+    - pyqt >=5.5
   run:
     - python
-    - pyqt5
+    - pyqt >=5.5
 
 test:
   imports:
