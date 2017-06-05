@@ -8,10 +8,9 @@ source:
   md5: ea6f00470e1bf7ed9e4edcff0f650fe6
 
 build:
-  number: 5
-  noarch: python
-  entry_points:
-    - lit = lit:main
+  number: 6
+  noarch_python: true
+  script: $PYTHON setup.py install
 
 requirements:
   build:
