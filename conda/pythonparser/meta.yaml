@@ -7,9 +7,9 @@ source:
   git_tag: 1.0
 
 build:
-  number: 7
-  string: py_7
-  noarch_python: true
+  number: 8
+  string: py_8
+  noarch: python
   script: $PYTHON setup.py install
 
 requirements:
