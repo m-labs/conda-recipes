@@ -8,14 +8,14 @@ source:
   md5: ea6f00470e1bf7ed9e4edcff0f650fe6
 
 build:
-  number: 3
+  number: 4
   noarch: python
-  script: $PYTHON setup.py install
+  entry_points:
+    - lit: lit:main
 
 requirements:
   build:
     - python
-    - setuptools
 
   run:
     - python
