@@ -7,8 +7,8 @@ source:
   git_tag: 0.4.2
 
 build:
-  number: 3
-  noarch_python: true
+  number: 4
+  noarch: python
   script: $PYTHON setup.py install
 
 requirements:
