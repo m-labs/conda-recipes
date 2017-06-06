@@ -7,10 +7,18 @@ source:
   url: https://pypi.python.org/packages/source/l/lit/lit-0.4.1.tar.gz
   md5: ea6f00470e1bf7ed9e4edcff0f650fe6
 
+{% set data = load_setup_py_data() %}
+
 build:
-  number: 7
-  noarch_python: true
-  script: $PYTHON setup.py install
+  number: 8
+  noarch: python
+  entry_points:
+    {% for entry_point_type, entry_points in data.get("entry_points", dict()).items() -%}
+    {% for entry_point in entry_points -%}
+    - {{ entry_point }}
+    {% endfor %}
+    {% endfor %}
+  script: $PYTHON setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   build:

@@ -7,9 +7,12 @@ source:
   git_tag: 0.4.2
 
 build:
-  number: 6
-  noarch_python: true
-  script: $PYTHON setup.py install
+  number: 7
+  noarch: python
+  entry_points:
+    - OutputCheck = OutputCheck.Driver:scriptEntryPoint
+  script: $PYTHON setup.py install --single-version-externally-managed --record=record.txt
+
 
 requirements:
   build:
