@@ -6,5 +6,4 @@ cd build
   --prefix=$PREFIX \
   --llvm-root=$(dirname $(dirname $(which llvm-config))) \
   --disable-docs
-make
 make install
