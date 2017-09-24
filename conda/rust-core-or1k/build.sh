@@ -1,7 +1,6 @@
 #!/bin/sh -ex
 
-libs="libcore liballoc libstd_unicode libcollections liblibc_mini \
-  libunwind"
+libs="libcore libstd_unicode liballoc liblibc_mini libunwind"
 destdir="${PREFIX}/lib/rustlib/or1k-unknown-none/lib/"
 rustc="rustc --out-dir ${destdir} --target or1k-unknown-none -g"
 rustc="${rustc} -C target-feature=+mul,+div,+ffl1,+cmov,+addc -C opt-level=s"
