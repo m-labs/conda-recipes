@@ -6,5 +6,5 @@ cd build
   --prefix=$PREFIX \
   --llvm-root=$(dirname $(dirname $(which llvm-config))) \
   --disable-docs
-../x.py build
-../x.py dist --install
+make
+make install
