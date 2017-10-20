@@ -13,7 +13,6 @@ requirements:
   build:
     - system # [linux]
     - libusb >=1.0.16
-    - libtool ==2.4.6
   run:
     - libusb >=1.0.16
 
