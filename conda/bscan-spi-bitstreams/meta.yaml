@@ -1,0 +1,20 @@
+package:
+  name: bscan-spi-bitstreams
+  version: 0.10.0+git
+
+source:
+  git_rev: 070d8b29acf1445c08ebf3073d04206461819bbe
+  git_url: https://github.com/jordens/bscan_spi_bitstreams
+
+build:
+  number: 1
+  noarch: generic
+  binary_relocation: false
+  script:
+    - 'mkdir -p $PREFIX/share/bscan-spi-bitstreams'
+    - 'mv *.bit $PREFIX/share/bscan-spi-bitstreams'
+
+about:
+  home: https://github.com/jordens/bscan_spi_bitstreams
+  license: GPLv2+
+  summary: 'Proxy bitstreams to allow programming SPI flashes behind FPGAs.'
