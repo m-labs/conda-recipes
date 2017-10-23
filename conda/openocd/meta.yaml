@@ -1,13 +1,13 @@
 package:
   name: openocd
-  version: 0.10.0+git
+  version: 0.10.0+git1
 
 source:
   git_rev: 977d9e41ac6942c7754a6c1bad2d6e5b8b6b9b3f
   git_url: https://github.com/m-labs/openocd
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -15,7 +15,7 @@ requirements:
     - libusb >=1.0.16
   run:
     - libusb >=1.0.16
-    - bscan-spi-bitstreams 0.10.0+git 1
+    - bscan-spi-bitstreams 0.10.0+git
 
 about:
   home: http://openocd.org/
