@@ -5,6 +5,7 @@ rustc="rustc --out-dir ${destdir} -L ${destdir} --target or1k-unknown-none -g"
 rustc="${rustc} -C target-feature=+mul,+div,+ffl1,+cmov,+addc -C opt-level=s"
 rustc="${rustc} --crate-type rlib"
 
+mkdir -p ${destdir}
 ${rustc} --crate-name core src/libcore/lib.rs
 ${rustc} --crate-name std_unicode src/libstd_unicode/lib.rs
 ${rustc} --crate-name alloc src/liballoc/lib.rs
