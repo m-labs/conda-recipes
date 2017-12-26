@@ -1,8 +1,5 @@
 #!/bin/sh -ex
 
-mkdir build
-cd build
-../configure \
-  --prefix=$PREFIX
-make
-make install
+cargo build --release
+mkdir -p $PREFIX/usr/bin
+cp target/release/cargo $PREFIX/usr/bin/

@@ -17,6 +17,7 @@ requirements:
     - libgit2
     - libssh2
     - rustc
+    - cargo
     - cmake
   run:
     - system [linux]
