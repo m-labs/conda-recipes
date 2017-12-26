@@ -1,6 +1,3 @@
-@rem Keep in sync with llvm-or1k
-set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
-
 @rem Let CMake know about the LLVM install path, for find_package()
 set CMAKE_PREFIX_PATH=%LIBRARY_PREFIX%
 
