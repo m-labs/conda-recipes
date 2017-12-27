@@ -6,19 +6,12 @@ source:
   git_url: https://github.com/m-labs/microscope
   git_tag: 1.0
 
-{% set data = load_setup_py_data() %}
-
 build:
   noarch: python
-  number: 1
-  string: py_1
+  number: 2
+  string: py_2
   entry_points:
-    # NOTE: conda-build cannot distinguish between console and gui scripts
-    {% for entry_point_type, entry_points in data.get("entry_points", dict()).items() -%}
-    {% for entry_point in entry_points -%}
-    - {{ entry_point }}
-    {% endfor %}
-    {% endfor %}
+    - microscope = microscope.microscope:main
   script: $PYTHON setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
