@@ -1,15 +1,15 @@
 package:
   name: microscope
-  version: 1.0
+  version: 1.1
 
 source:
   git_url: https://github.com/m-labs/microscope
-  git_tag: 1.0
+  git_tag: 1.1
 
 build:
   noarch: python
-  number: 2
-  string: py_2
+  number: 1
+  string: py_1
   entry_points:
     - microscope = microscope.microscope:main
   script: $PYTHON setup.py install --single-version-externally-managed --record=record.txt
