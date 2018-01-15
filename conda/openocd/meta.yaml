@@ -1,9 +1,9 @@
 package:
   name: openocd
-  version: 0.10.0+git1
+  version: 0.10.0+git2
 
 source:
-  git_rev: 977d9e41ac6942c7754a6c1bad2d6e5b8b6b9b3f
+  git_rev: b0b51472
   git_url: https://github.com/m-labs/openocd
 
 build:
