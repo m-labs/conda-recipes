@@ -1,13 +1,13 @@
 package:
   name: bscan-spi-bitstreams
-  version: 0.10.0+git
+  version: "0.10.0"
 
 source:
   git_rev: 070d8b29acf1445c08ebf3073d04206461819bbe
   git_url: https://github.com/jordens/bscan_spi_bitstreams
 
 build:
-  number: 1
+  number: 2
   noarch: generic
   binary_relocation: false
   script:
