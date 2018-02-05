@@ -3,11 +3,11 @@ package:
   version: "0.10.0"
 
 source:
-  git_rev: 9f8c46a7a01161deaa615bd097606a6160c587c6
+  git_rev: 8cea56c63e14162ea3e78004b16c5e3049f9e743
   git_url: https://github.com/m-labs/openocd
 
 build:
-  number: 4
+  number: 5
 
 requirements:
   build:
