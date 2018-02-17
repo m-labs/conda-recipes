@@ -7,7 +7,7 @@ source:
   git_url: https://github.com/m-labs/openocd
 
 build:
-  number: 6
+  string: 6
 
 requirements:
   build:
