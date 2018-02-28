@@ -1,5 +1,5 @@
 set TOOLPREF=mingw-w64-i686-
-set TRIPLE=x86_64-pc-msys
+set TRIPLE=x86_64-pc-mingw32
 set PATH=%MSYS%\usr\bin;%MSYS%\mingw%ARCH%\bin;%PATH%
 
 pacman -S --noconfirm %TOOLPREF%gcc %TOOLPREF%binutils make autoconf automake libtool pkg-config
