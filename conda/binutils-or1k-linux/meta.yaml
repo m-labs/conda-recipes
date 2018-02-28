@@ -19,6 +19,9 @@ build:
 requirements:
   build:
     - system # [not win]
+    - libiconv
+  run:
+    - libiconv
 
 about:
   home: https://www.gnu.org/software/binutils/
