@@ -1,0 +1,11 @@
+--- intl/relocatable.c	2018-02-28 18:19:46.318224392 +0000
++++ intl/relocatable.c.orig	2018-02-28 18:19:37.614224749 +0000
+@@ -145,7 +145,7 @@
+   libcharset_set_relocation_prefix (orig_prefix_arg, curr_prefix_arg);
+ #endif
+ #if DEPENDS_ON_LIBICONV && HAVE_ICONV && _LIBICONV_VERSION >= 0x0109
+-  // libiconv_set_relocation_prefix (orig_prefix_arg, curr_prefix_arg);
++  libiconv_set_relocation_prefix (orig_prefix_arg, curr_prefix_arg);
+ #endif
+ #if DEPENDS_ON_LIBINTL && ENABLE_NLS && defined libintl_set_relocation_prefix
+   libintl_set_relocation_prefix (orig_prefix_arg, curr_prefix_arg);

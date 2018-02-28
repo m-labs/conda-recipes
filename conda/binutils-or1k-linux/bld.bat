@@ -7,6 +7,8 @@ if errorlevel 1 exit 1
 
 mkdir build
 cd build
+set CFLAGS=-I%PREFIX:\=/%/Library/include/
+set LDFLAGS=-L%PREFIX:\=/%/Library/lib/
 sh ../configure --build=%TRIPLE% ^
   --prefix="%PREFIX:\=/%/Library" ^
   --bindir="%PREFIX:\=/%/Scripts" ^
@@ -21,6 +23,3 @@ if errorlevel 1 exit 1
 
 rem this is a copy of prefixed executables
 rmdir /S /Q %PREFIX%\Library\or1k-linux
-
-rem conda doesn't ship iconv-2.dll
-copy %MSYS:/=\%\usr\bin\msys-iconv-2.dll %PREFIX%\Scripts\libiconv-2.dll
