@@ -18,3 +18,6 @@ if errorlevel 1 exit 1
 
 make install
 if errorlevel 1 exit 1
+
+rem this is a copy of prefixed executables
+rmdir /S /Q %PREFIX%\Library\or1k-linux
