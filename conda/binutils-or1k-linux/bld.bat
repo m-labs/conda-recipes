@@ -5,6 +5,9 @@ set PATH=%MSYS%\usr\bin;%MSYS%\mingw%ARCH%\bin;%PATH%
 pacman -S --noconfirm %TOOLPREF%gcc %TOOLPREF%binutils make autoconf automake libtool pkg-config
 if errorlevel 1 exit 1
 
+rem upstream packaging bug https://sourceware.org/ml/crossgcc/2008-05/msg00071.html
+touch bfd/doc/bfd.info
+
 mkdir build
 cd build
 sh ../configure --build=%TRIPLE% ^
