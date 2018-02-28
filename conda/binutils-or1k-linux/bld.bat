@@ -23,4 +23,4 @@ rem this is a copy of prefixed executables
 rmdir /S /Q %PREFIX%\Library\or1k-linux
 
 rem conda doesn't ship iconv-2.dll
-copy %MSYS%\usr\bin\msys-iconv-2.dll %PREFIX%\Scripts\iconv-2.dll
+copy %MSYS:/=\%\usr\bin\msys-iconv-2.dll %PREFIX%\Scripts\iconv-2.dll
