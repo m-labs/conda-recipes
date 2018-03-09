@@ -7,7 +7,7 @@ source:
   git_rev: artiq-1.23.0
 
 build:
-  number: 18
+  number: 19
   detect_binary_files_with_prefix: false
 
 requirements:
@@ -19,6 +19,7 @@ requirements:
   run:
     - system [linux]
     - llvm-or1k
+    - libcurl
 
 about:
   home: http://rust-lang.org/
