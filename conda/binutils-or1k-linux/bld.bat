@@ -11,7 +11,6 @@ set CFLAGS=-I%PREFIX:\=/%/Library/include/
 set LDFLAGS=-L%PREFIX:\=/%/Library/lib/
 sh ../configure --build=%TRIPLE% ^
   --prefix="%PREFIX:\=/%/Library" ^
-  --bindir="%PREFIX:\=/%/Scripts" ^
   --target=or1k-linux
 if errorlevel 1 exit 1
 
