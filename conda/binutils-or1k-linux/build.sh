@@ -5,4 +5,4 @@ make
 make install
 
 # this is a copy of prefixed executables
-rmdir /S /Q $PREFIX/or1k-linux
+rm -rf $PREFIX/or1k-linux
