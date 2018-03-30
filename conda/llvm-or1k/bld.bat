@@ -1,5 +1,5 @@
 cd tools
-git clone https://github.com/m-labs/clang-or1k clang --depth 1 --branch artiq-4.0
+git clone https://github.com/m-labs/clang-or1k clang --depth 1 --branch artiq-6.0
 cd ..
 
 mkdir build
