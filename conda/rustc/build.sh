@@ -6,6 +6,7 @@ cd build
   --prefix=$PREFIX \
   --sysconfdir=$PREFIX/etc \
   --llvm-root=$PREFIX \
+  --llvm-link-shared \
   --disable-docs \
   --enable-extended
 make install

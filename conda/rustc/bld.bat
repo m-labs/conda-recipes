@@ -3,6 +3,7 @@ cd build
 python ../src/bootstrap/configure.py \
   --prefix=%PREFIX%\Library \
   --llvm-root=%PREFIX%\Library \
+  --llvm-link-shared \
   --disable-docs \
   --enable-extended
 if errorlevel 1 exit 1
