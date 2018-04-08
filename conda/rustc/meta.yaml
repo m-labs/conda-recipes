@@ -18,7 +18,7 @@ requirements:
     - curl
   run:
     - system [linux]
-    - llvm-or1k
+    - llvm-or1k 6.0.0
     - libcurl
 
 about:
