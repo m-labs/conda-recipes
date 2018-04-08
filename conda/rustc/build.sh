@@ -1,5 +1,7 @@
 #!/bin/sh -ex
 
+export LD_LIBRARY_PATH=$PREFIX/lib
+
 mkdir build
 cd build
 ../configure \
