@@ -1,6 +1,7 @@
 mkdir build
 cd build
 python ../src/bootstrap/configure.py ^
+  --disable-manage-submodules ^
   --prefix=%LIBRARY_PREFIX% ^
   --llvm-root=%LIBRARY_PREFIX% ^
   --enable-llvm-link-shared ^
