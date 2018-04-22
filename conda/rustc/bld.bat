@@ -8,7 +8,11 @@ python ../src/bootstrap/configure.py ^
   --disable-docs ^
   --enable-extended
 if errorlevel 1 exit 1
-python ../x.py build
+
+rem for some fucking insane reason without `start` x.py just hangs forever
+rem I hate Windows. I hate Conda even more than I hate Windows. Fuck this shit.
+start /wait python ../x.py build
 if errorlevel 1 exit 1
-python ../x.py install
+
+start /wait python ../x.py install
 if errorlevel 1 exit 1
