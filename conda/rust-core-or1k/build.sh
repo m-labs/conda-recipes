@@ -7,7 +7,7 @@ rustc="${rustc} --crate-type rlib"
 
 mkdir -p ${destdir}
 ${rustc} --crate-name core src/libcore/lib.rs
-${rustc} --crate-name compiler_builtins ../src/libcompiler_builtins/src/lib.rs --cfg 'feature="compiler-builtins"' --cfg 'feature="mem"'
+${rustc} --crate-name compiler_builtins src/libcompiler_builtins/src/lib.rs --cfg 'feature="compiler-builtins"' --cfg 'feature="mem"'
 ${rustc} --crate-name std_unicode src/libstd_unicode/lib.rs
 ${rustc} --crate-name alloc src/liballoc/lib.rs
 ${rustc} --crate-name libc src/liblibc_mini/lib.rs
