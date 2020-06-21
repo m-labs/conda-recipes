@@ -1,9 +1,6 @@
-set TOOLPREF=mingw-w64-i686-
-set TRIPLE=x86_64-pc-mingw32
-set PATH=%MSYS%\usr\bin;%MSYS%\mingw%ARCH%\bin;%PATH%
-
-pacman -S --noconfirm %TOOLPREF%gcc %TOOLPREF%binutils make autoconf automake libtool texinfo
-if errorlevel 1 exit 1
+set MSYS=C:\MSYS64
+set TRIPLE=x86_64-pc-mingw64
+set PATH=%MSYS%\usr\bin;%MSYS%\mingw64\bin;%PATH%
 
 mkdir build
 cd build
