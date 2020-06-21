@@ -1,7 +1,5 @@
 #!/bin/bash -ex
 
-git clone https://github.com/m-labs/clang-or1k tools/clang --depth 1 --branch artiq-6.0
-
 mkdir build
 cd build
 cmake .. $COMPILER32 \
@@ -15,10 +13,6 @@ cmake .. $COMPILER32 \
   -DLLVM_INSTALL_UTILS=ON \
   -DLLVM_INCLUDE_TESTS=OFF \
   -DLLVM_INCLUDE_DOCS=OFF \
-  -DLLVM_INCLUDE_EXAMPLES=OFF \
-  -DCLANG_ENABLE_ARCMT=OFF \
-  -DCLANG_ENABLE_STATIC_ANALYZER=OFF \
-  -DCLANG_INCLUDE_TESTS=OFF \
-  -DCLANG_INCLUDE_DOCS=OFF
+  -DLLVM_INCLUDE_EXAMPLES=OFF
 make -j2
 make install
